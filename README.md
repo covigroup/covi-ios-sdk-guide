@@ -5,7 +5,7 @@
 
 - [SDK 설치](#sdk-설치)
     - [Cocoapods](#cocoapods-사용해-설치)
-    - [SPM (지원 준비 중)](#spm-사용해-설치-지원-준비-중)
+    - [SPM](#spm-사용해-설치)
 
 - [COVI 광고 삽입](#covi-광고-삽입)
     - [SDK 사용](#sdk-사용)
@@ -40,7 +40,7 @@ target 'App' do
 end
 ```
 
-## `SPM` 사용해 설치 (지원 준비 중)
+## `SPM` 사용해 설치
 - Project > Package Dependencise 항목을 선택합니다.
 - `+` 버튼을 눌러 패키지 설치 윈도우가 나오면 우측 상단의 검색 창에서 패키지명 COVI-iOS-SDK 또는 레포지토리 주소 https://github.com/covigroup/COVI-iOS-SDK.git 를 입력합니다.
 
@@ -49,9 +49,9 @@ end
 # COVI 광고 삽입
 
 ## SDK 사용
-- COVI 플레이어를 삽입할 ViewController가 위치한 파일 상단에 `COVI-iOS-SDK`를 import 합니다.
+- COVI 플레이어를 삽입할 ViewController가 위치한 파일 상단에 `covisdk`를 import 합니다.
 ``` swift
-import COVI-iOS-SDK
+import covisdk
 ```
 
 <br/>
@@ -148,7 +148,7 @@ func coviEventHandler(event:String) {
 <br/>
 
 ## COVI 플레이어 로드
-- 먼저 `viewDidLoad`에서 COVI 옵션을 설정합니다.
+- `viewDidLoad`에서 COVI 옵션을 설정하고, COVI 플레이어를 로드합니다.
 
 ```swift
 override func viewDidLoad() {
@@ -156,15 +156,6 @@ override func viewDidLoad() {
 
     // COVI 옵션 설정
     setCoviOpts()
-}
-```
-
-<br>
-
-- `viewDidAppear`에서 COVI 플레이어를 로드합니다.
-```swift
-override func viewDidAppear() {
-    super.viewDidAppear()
 
     // COVI 플레이어 로드
     coviPlayer.loadContent(coviEventHandler: coviEventHandler)
