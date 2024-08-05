@@ -97,6 +97,8 @@ func setCoviOpts () {
         
     // 선택
     coviPlayer.playType = .auto_play
+    // coviPlayer.useInAppWebview = false
+    coviPlayer.appViewController = self
 }
 ```
 
@@ -113,6 +115,8 @@ func setCoviOpts () {
 | gender   | String  | 성별                       | 권장                  |
 | idfa     | String  | iOS 광고 ID            | 권장                  |
 | playtype | Enum  | 비디오 재생 방법<br> .auto_play: 자동 재생 (기본값)<br>.click_to_play: 클릭 재생 | 선택                  |
+| useInAppWebview | Bool  | 광고주 랜딩페이지로 이동할 때 인앱 웹뷰 사용 여부<br> true: 인앱 웹뷰 사용 (기본값)<br>false: 외부 브라우저 사용 | 선택                  |
+| appViewController | UIViewController  | 인앱 웹뷰 사용을 위해 UIViewController를 SDK에 전달합니다.<br>* SDK에서 적절한 UIViewController를 찾을 수 없을 시 광고주 랜딩페이지로 이동할 때 외부 브라우저를 사용합니다. | 선택                  |
 
 <br/>
 
