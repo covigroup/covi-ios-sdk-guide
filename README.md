@@ -133,6 +133,9 @@ func coviEventHandler(event:String) {
 
     case "SDK_NO_ADS":
         print("[covi] no ads");
+
+    case "VAST_LOAD_FAIL":
+        print("[covi] VAST_LOAD_FAIL")
             
     case "PLAYER_VIDEO_PLAY":
             
