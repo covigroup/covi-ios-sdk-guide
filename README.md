@@ -131,6 +131,9 @@ func coviEventHandler(event:String) {
     case "VAST_LOAD_FAIL":
         print("[covi] VAST_LOAD_FAIL")
 
+    case "PLAYER_LOAD_FAIL":
+        print("[covi] PLAYER_LOAD_FAIL")
+
     case "SDK_NO_ADS":
         print("[covi] no ads");
             
